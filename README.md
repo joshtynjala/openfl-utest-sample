@@ -7,3 +7,5 @@ To run the tests, use the `openfl test` command with one of OpenFL's supported t
 ```sh
 openfl test html5
 ```
+
+Sample created by [Josh Tynjala](https://twitter.com/joshtynjala), the author of [Feathers UI](https://feathersui.com/).
