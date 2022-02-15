@@ -45,6 +45,54 @@ jobs:
     - name: Run Tests
       run: node playwright-runner.js
 
+  test-linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: krdlab/setup-haxe@v1
+      with:
+        haxe-version: 4.1.5
+    - name: Set up Haxelib dependencies
+      run: |
+        haxelib install lime --quiet
+        haxelib install openfl --quiet
+        haxelib install hxcpp --quiet
+        haxelib install utest --quiet
+    - name: Run Tests
+      run: haxelib run openfl test linux
+
+  test-mac:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: krdlab/setup-haxe@v1
+      with:
+        haxe-version: 4.1.5
+    - name: Set up Haxelib dependencies
+      run: |
+        haxelib install lime --quiet
+        haxelib install openfl --quiet
+        haxelib install hxcpp --quiet
+        haxelib install utest --quiet
+    - name: Run Tests
+      run: haxelib run openfl test mac
+
+  test-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: krdlab/setup-haxe@v1
+      with:
+        haxe-version: 4.1.5
+    - name: Set up Haxelib dependencies
+      run: |
+        haxelib install lime --quiet
+        haxelib install openfl --quiet
+        haxelib install hxcpp --quiet
+        haxelib install utest --quiet
+    - name: Run Tests
+      run: haxelib run openfl test windows
+
   test-air:
     runs-on: windows-latest
     steps:
