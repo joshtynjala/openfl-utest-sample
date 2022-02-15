@@ -44,3 +44,20 @@ jobs:
       run: haxelib run openfl build html5 -final -Dplaywright
     - name: Run Tests
       run: node playwright-runner.js
+
+  test-air:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: krdlab/setup-haxe@v1
+      with:
+        haxe-version: 4.1.5
+    - name: Set up Haxelib dependencies
+      run: |
+        haxelib install lime --quiet
+        haxelib install openfl --quiet
+        haxelib install utest --quiet
+    - uses: joshtynjala/setup-adobe-air-action@v1
+    - run: haxelib run openfl config AIR_SDK ${{ env.AIR_HOME }}
+    - name: Run Tests
+      run: haxelib run openfl test air
