@@ -10,10 +10,8 @@ on:
 
 jobs:
 
-  tests:
-
+  test-neko:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - uses: krdlab/setup-haxe@v1
@@ -26,3 +24,23 @@ jobs:
         haxelib install utest --quiet
     - name: Run Tests
       run: haxelib run openfl test neko
+
+  test-html5:
+    # doesn't work on ubuntu-latest due to driver issues with firefox
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: krdlab/setup-haxe@v1
+      with:
+        haxe-version: 4.1.5
+    - name: Set up Haxelib dependencies
+      run: |
+        haxelib install lime --quiet
+        haxelib install openfl --quiet
+        haxelib install utest --quiet
+    - name: Set up Node.js dependencies
+      run: npm ci
+    - name: Build Tests
+      run: haxelib run openfl build html5 -final -Dplaywright
+    - name: Run Tests
+      run: node playwright-runner.js
