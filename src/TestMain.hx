@@ -16,7 +16,7 @@ class TestMain extends Sprite {
 		// special case: see below for details
 		setupHeadlessMode(runner);
 		#else
-		// a report prints the final results after all tests have runner
+		// a report prints the final results after all tests have run
 		Report.create(runner);
 		#end
 
