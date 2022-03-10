@@ -38,7 +38,7 @@ class SampleTestCase extends Test {
 		Asynchronous test methods should accept one `Async` argument. Call
 		`async.done()` when all assertions are complete.
 	**/
-	@:timeout(500)
+	@:timeout(1000)
 	public function testSampleAsync(async:Async):Void {
 		Timer.delay(() -> {
 			Assert.notNull(_sprite);
