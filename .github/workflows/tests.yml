@@ -13,7 +13,7 @@ jobs:
   test-neko:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: krdlab/setup-haxe@v1
       with:
         haxe-version: 4.1.5
@@ -28,7 +28,7 @@ jobs:
   test-hashlink:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: krdlab/setup-haxe@v1
       with:
         haxe-version: 4.1.5
@@ -44,7 +44,7 @@ jobs:
     # doesn't work on ubuntu-latest due to driver issues with firefox
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: krdlab/setup-haxe@v1
       with:
         haxe-version: 4.1.5
@@ -63,7 +63,7 @@ jobs:
   test-linux:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: krdlab/setup-haxe@v1
       with:
         haxe-version: 4.1.5
@@ -79,7 +79,7 @@ jobs:
   test-mac:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: krdlab/setup-haxe@v1
       with:
         haxe-version: 4.1.5
@@ -95,7 +95,7 @@ jobs:
   test-windows:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: krdlab/setup-haxe@v1
       with:
         haxe-version: 4.1.5
@@ -111,7 +111,7 @@ jobs:
   test-air:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: krdlab/setup-haxe@v1
       with:
         haxe-version: 4.1.5
@@ -120,7 +120,10 @@ jobs:
         haxelib install lime --quiet
         haxelib install openfl --quiet
         haxelib install utest --quiet
-    - uses: joshtynjala/setup-adobe-air-action@v1
+    - uses: joshtynjala/setup-adobe-air-action@v2
+      with:
+        air-version: "33.1"
+        accept-license: true
     - run: haxelib run openfl config AIR_SDK ${{ env.AIR_HOME }}
     - name: Run Tests
       run: haxelib run openfl test air
