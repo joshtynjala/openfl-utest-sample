@@ -44,6 +44,9 @@ class SampleTestCase extends Test {
 	@:timeout(2000)
 	public function testSampleAsync(async:Async):Void {
 		Timer.delay(() -> {
+			if (async.timedOut) {
+				return;
+			}
 			Assert.notNull(_sprite);
 			async.done();
 		}, 250);
