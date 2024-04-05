@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 	<meta title="UTest with OpenFL Sample" package="com.example.tests" />
-	<app main="TestMain" />
+	<app main="TestMain"/>
 
-	<source path="src" />
+	<!-- no need to display anything for automated tests -->
+	<window hidden="true"/>
+
+	<source path="src"/>
 	
-	<haxelib name="openfl" />
-	<haxelib name="utest" />
+	<haxelib name="openfl"/>
+	<haxelib name="utest"/>
 
-	<!--
-		a custom HTML template is required when using utest with OpenFL
-	 -->
+	<!-- a custom HTML template is recommended for utest -->
+	<!-- it is strictly required for OpenFL 9.3 and older -->
 	<template path="templates" if="html5"/>
 </project>
