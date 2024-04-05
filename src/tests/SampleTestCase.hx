@@ -31,14 +31,17 @@ class SampleTestCase extends Test {
 	**/
 	public function testSample():Void {
 		// Each test must include one or more assertions
+		trace(Lib.current.stage.stageWidth + " " + Lib.current.stage.stageHeight);
 		Assert.notNull(_sprite);
 	}
 
 	/**
 		Asynchronous test methods should accept one `Async` argument. Call
 		`async.done()` when all assertions are complete.
+
+		A longer timeout may be useful on CI servers
 	**/
-	@:timeout(1000)
+	@:timeout(2000)
 	public function testSampleAsync(async:Async):Void {
 		Timer.delay(() -> {
 			Assert.notNull(_sprite);
