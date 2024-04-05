@@ -20,6 +20,16 @@ class TestMain extends Sprite {
 		Report.create(runner);
 		#end
 
+		#if html5
+		runner.onComplete.add(function(runner:Runner):Void {
+			// by default, OpenFL fills the entire window on the html5 target
+			// these lines ensure that test results are visible (and scrollable,
+			// if necessary) after all tests have run
+			stage.window.element.style.display = "none";
+			stage.window.element.ownerDocument.body.style.overflow = "auto";
+		});
+		#end
+
 		// don't forget to start the runner
 		runner.run();
 	}
