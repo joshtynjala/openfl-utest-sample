@@ -31,7 +31,6 @@ class SampleTestCase extends Test {
 	**/
 	public function testSample():Void {
 		// Each test must include one or more assertions
-		trace(Lib.current.stage.stageWidth + " " + Lib.current.stage.stageHeight);
 		Assert.notNull(_sprite);
 	}
 
