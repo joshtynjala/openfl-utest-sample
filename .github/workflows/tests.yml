@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SDL_VIDEODRIVER: "dummy"
-      SDL_AUDIODRIVER: "disk"
+      SDL_AUDIODRIVER: "dummy"
     steps:
     - uses: actions/checkout@v4
     - uses: krdlab/setup-haxe@v1
