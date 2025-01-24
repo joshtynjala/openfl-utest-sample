@@ -29,10 +29,9 @@ jobs:
       run: haxelib run openfl test neko
 
   test-hashlink:
-    runs-on: ubuntu-latest
-    env:
-      SDL_VIDEODRIVER: "dummy"
-      SDL_AUDIODRIVER: "disk"
+    # AL init fails on both windows and ubuntu
+    # macos-14 is arm64, which setup-haxe doesn't support yet
+    runs-on: macos-13
     steps:
     - uses: actions/checkout@v4
     - uses: krdlab/setup-haxe@v1
