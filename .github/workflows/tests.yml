@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: krdlab/setup-haxe@v1
       with:
-        haxe-version: 4.3.4
+        haxe-version: 4.3.7
     - name: Set up Haxelib dependencies
       run: |
         haxelib install lime --quiet
@@ -36,7 +36,7 @@ jobs:
     # setup-haxe commit hash required for arm64 macOS support
     - uses: krdlab/setup-haxe@8f35d1215b93e940a76f9470e22e8a5ba6149598
       with:
-        haxe-version: 4.3.4
+        haxe-version: 4.3.7
     - name: Set up Haxelib dependencies
       run: |
         haxelib install lime --quiet
@@ -53,7 +53,7 @@ jobs:
     # setup-haxe commit hash required for arm64 macOS support
     - uses: krdlab/setup-haxe@8f35d1215b93e940a76f9470e22e8a5ba6149598
       with:
-        haxe-version: 4.3.4
+        haxe-version: 4.3.7
     - name: Set up Haxelib dependencies
       run: |
         haxelib install lime --quiet
@@ -78,7 +78,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: krdlab/setup-haxe@v1
       with:
-        haxe-version: 4.3.4
+        haxe-version: 4.3.7
     - name: Set up Haxelib dependencies
       run: |
         haxelib install lime --quiet
@@ -95,7 +95,7 @@ jobs:
     # setup-haxe commit hash required for arm64 macOS support
     - uses: krdlab/setup-haxe@8f35d1215b93e940a76f9470e22e8a5ba6149598
       with:
-        haxe-version: 4.3.4
+        haxe-version: 4.3.7
     - name: Set up Haxelib dependencies
       run: |
         haxelib install lime --quiet
@@ -111,7 +111,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: krdlab/setup-haxe@v1
       with:
-        haxe-version: 4.3.4
+        haxe-version: 4.3.7
     - name: Set up Haxelib dependencies
       run: |
         haxelib install lime --quiet
@@ -127,7 +127,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: krdlab/setup-haxe@v1
       with:
-        haxe-version: 4.3.4
+        haxe-version: 4.3.7
     - name: Set up Haxelib dependencies
       run: |
         haxelib install lime --quiet
